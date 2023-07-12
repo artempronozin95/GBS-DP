@@ -49,8 +49,13 @@ After these steps all necessary packages are installed. If you need update packa
 5. install next packeges from file below
 ```
 ## Input
+### Raw sequence
+Raw sequences obtened after sequencing methods in FASTQ.gz format.
+### Reference genome
+Reference genome of the species in `FASTA` format.
 
-### Configuration file
+## Configuration file
+Input all necessary files into configuration file “config.yaml”:
 
     
 ### Folders
