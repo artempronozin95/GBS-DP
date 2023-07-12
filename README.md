@@ -50,8 +50,6 @@ After these steps all necessary packages are installed. If you need update packa
 ```
 ## Input
 
-
-
 ### Configuration file
 
     
