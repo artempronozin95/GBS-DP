@@ -2,11 +2,24 @@
 
 
 ## Introduction
+The GBS method has demonstrated its reliability and flexibility for a number of plant species and populations. GBS has been applied to identify molecular markers for genetic mapping, genomic selection, genetic diversity research, variety identification, as well as research in conservation biology and evolutionary ecology. GBS method has reduced both the cost and the time required to sequencing of the studied samples. This has led to the need to develop high-quality bioinformatics analysis for an ever-expanding amount of sequenced data. For these purposes, to date, bioinformatics pipelines for analyzing data obtained by the GBS method have been developed.
+In the precent work we developed bioinformatic pipeline GBS-DB. The pipeline is applicable for any species of organisms. The pipeline allows processing large amounts of data (more than 400 samples) and is implemented using Snakemake software manager
+
 #### This pipeline is only applicable to the Linux operating system.
 
-
+## Scheme of the bioinformatic pipeline
 The pipeline includes the following steps: 
-
+#### 1. Data pre-processing
++ Raw reads quaolity control
++ Adapters filtering
++ Reference genome index construction.
+#### 2. Polymorphism searching
++ Reads mapping
++ Sorting of mapped reads
++ Polymorphism searching.
+#### 3. Genetic diversity analysis
++ VCF format converting (into GDS)
++ Clasterization and phylogenetic tree construction.
 
 The pipeline is implemented using the workflow management system [Snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html), which provides ability to platform-independent installation and execution of the software.
 
