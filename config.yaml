@@ -1,0 +1,2 @@
+zip_fastq : "zip/*.fastq.gz"
+reference_genome : "ref/Prunus_persica_chr_numb"
