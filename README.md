@@ -56,26 +56,24 @@ Reference genome of the species in `FASTA` format.
 
 ## Configuration file
 Input all necessary files into configuration file “config.yaml”:
-
++ `zip_fastq:` - the path to the folder with the raw readings.
+  + (Example: `zip_fastq: "zip/*.fastq.gz"`)
++ `reference_genome:` - the path to the reference genome and the name of genome.
+  + (Example: `"ref/Prunus_persica_chr_numb"`)
     
-### Folders
-
 ## Work start
   #### 1. `snakemake -j 2`
   `-j` or  `--cores` -  Use at most N CPU cores/jobs in parallel. If N is omitted or ‘all’, the limit is set to the number of available CPU cores.
   #### 2. `snakemake -nr` 
   `-n` - Do not execute anything, and display what would be done. If you have a very large workflow, use –dry-run –quiet to just print a summary of the DAG of jobs.
-  
   `-r` - Print the reason for each executed rule.
   #### 3. `snakemake --use-conda`
   `--use-conda` - Use additional conda environment.
   #### 4. Recommended run: 
   `snakemake -j 2 --use-conda`
 
-
 ## Output
-
-
+A typical structure of `Output` is follows:
 ```
 ├── alignment
 │   └── seq1.sam
@@ -93,6 +91,7 @@ Input all necessary files into configuration file “config.yaml”:
 ├── env
 │   └── programs.yaml
 ├── ref
+│   └── reference.fasta
 ├── results
 │   └── cluster.gds
 │   └── cluster.png
@@ -121,16 +120,11 @@ Input all necessary files into configuration file “config.yaml”:
 │   └── seq2.vcf
 │   └── ...
 └── zip
+│   └── seq1.fastq.gz
+│   └── seq2.fastq.gz
+│   └── ...
 ```
 
   
 
-Load environment:
-1. conda env create --file env/programs.yaml
-2. conda activate GBS
 
-Input files that should wright into config:
-1. folder with .gz fastq files. (sample: zip/*.fastq.gz) 
-2. reference genome.
-All other job will do pipeline.
-https://docs.google.com/document/d/1wGryeajmjzpX6ysa2g-yuacTAYoZzM_cIFIIvPGVKjw/edit#
