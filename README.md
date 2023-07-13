@@ -98,7 +98,6 @@ A typical structure of `Output` is follows:
 │   └── cluster_tab.tsv
 │   └── dendrogram.tree
 │   └── plotdendogram.png
-├── rtmp
 ├── script
 │   ├── index_vcf.sh
 │   ├── sam_bam.sh
@@ -124,7 +123,22 @@ A typical structure of `Output` is follows:
 │   └── seq2.fastq.gz
 │   └── ...
 ```
-
-  
+***Data pre-processing***
++ zip - Raw reads in `FASTQ.gz` format.
++ triming_reads - processed reads, `FASTQ` format.
++ ref - reference genome, `FASTA` format. As well reference genome index in `FASTA.idx` format. 
+***Polymorphism searching***
++ alignment - reads mapping in `SAM`, `BAM` format. As well sorting mapping reads `SORT` format.
++ VCF - polymorphism searching, `VCF` format.
++ VCF_index -  index of polymorphism files in `CSI` format.
+***Genetic diversity analysis***
++ chr - polymorphism file for each chromosome in `VCF` format. As well index of polymorphism files in `CSI` format, for each chromosome. 
++ tree - merged polymorphism files in `VCF` files.
++ results - containe main results of pipeline
+  + cluster.gds - converted merged polymorphism files in `GDS` files.
+  + cluster.png - PCA clusterization
+  + cluster_tab.tsv - Table of the PCA clusterization in `TSV` format.
+  + dendrogram.tree - phylogenetic tree build by hierarchical clustering method in `TREE` format.
+  + plotdendogram.png - phylogenetic tree build by hierarchical clustering method.
 
 
