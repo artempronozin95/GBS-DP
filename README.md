@@ -136,7 +136,7 @@ A typical structure of `Output` is follows:
 + tree - merged polymorphism files in `VCF` files.
 + results - containe main results of pipeline
   + cluster.gds - converted merged polymorphism files in `GDS` files.
-  + cluster.png - PCA clusterization
+  + cluster.png - PCA clusterization ![Test Image 2](https://github.com/artempronozin95/GBS-DP-bioinformatics-pipeline-for-genotyping-by-sequencing-data-processing/blob/main/img/cluster.png)
   + cluster_tab.tsv - Table of the PCA clusterization in `TSV` format.
   + dendrogram.tree - phylogenetic tree build by hierarchical clustering method in `TREE` format.
   + plotdendogram.png - phylogenetic tree build by hierarchical clustering method.
