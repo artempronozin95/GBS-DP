@@ -1,5 +1,11 @@
 # GBS-DP-bioinformatics-pipeline-for-genotyping-by-sequencing-data-processing
 
+## Table of contents
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Input](#input)
+* [Running the pipeline](#work-start)
+* [Output](#output)
 
 ## Introduction
 The GBS method has demonstrated its reliability and flexibility for a number of plant species and populations. GBS has been applied to identify molecular markers for genetic mapping, genomic selection, genetic diversity research, variety identification, as well as research in conservation biology and evolutionary ecology. GBS method has reduced both the cost and the time required to sequencing of the studied samples. This has led to the need to develop high-quality bioinformatics analysis for an ever-expanding amount of sequenced data. For these purposes, to date, bioinformatics pipelines for analyzing data obtained by the GBS method have been developed.
@@ -139,6 +145,6 @@ A typical structure of `Output` is follows:
   + cluster.png - PCA clusterization ![Test Image 2](https://github.com/artempronozin95/GBS-DP-bioinformatics-pipeline-for-genotyping-by-sequencing-data-processing/blob/main/img/cluster.png)
   + cluster_tab.tsv - Table of the PCA clusterization in `TSV` format.
   + dendrogram.tree - phylogenetic tree build by hierarchical clustering method in `TREE` format.
-  + plotdendogram.png - phylogenetic tree build by hierarchical clustering method.
+  + plotdendogram.png - phylogenetic tree build by hierarchical clustering method. ![Test Image 3](https://github.com/artempronozin95/GBS-DP-bioinformatics-pipeline-for-genotyping-by-sequencing-data-processing/blob/main/img/Tree.png)
 
 
