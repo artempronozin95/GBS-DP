@@ -132,11 +132,13 @@ A typical structure of `Output` is follows:
 ***Data pre-processing***
 + zip - Raw reads in `FASTQ.gz` format.
 + triming_reads - processed reads, `FASTQ` format.
-+ ref - reference genome, `FASTA` format. As well reference genome index in `FASTA.idx` format. 
++ ref - reference genome, `FASTA` format. As well reference genome index in `FASTA.idx` format.
+   
 ***Polymorphism searching***
 + alignment - reads mapping in `SAM`, `BAM` format. As well sorting mapping reads `SORT` format.
 + VCF - polymorphism searching, `VCF` format.
 + VCF_index -  index of polymorphism files in `CSI` format.
+  
 ***Genetic diversity analysis***
 + chr - polymorphism file for each chromosome in `VCF` format. As well index of polymorphism files in `CSI` format, for each chromosome. 
 + tree - merged polymorphism files in `VCF` files.
