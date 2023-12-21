@@ -2,7 +2,9 @@ configfile: "config.yaml"
 import glob
 import subprocess
 import pandas as pd
-if glob.glob(config['zip_fastq']) == True:
+
+dir = config['zip_fastq'].rsplit('/', 1)
+if os.path.isdir(dir[0]) == True:
 	files = glob.glob(config['zip_fastq'])
 	zip = []
 	gunzip = []
