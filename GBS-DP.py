@@ -18,7 +18,9 @@ def create_config(configfile, args):
     #region # create config dictionary
     args.snakefile == os.path.join(os.path.dirname(os.path.realpath(__file__)), "Snakefile")
     ref_id = args.reference_genome.rsplit('.', 1)
+    print(args.sample_files)
     config_dict = {
+        'list_files' : args.sample_files,
         'zip_fastq'   : os.path.join(args.sample_dir, '*.fastq.gz'),
         'reference_genome'    : ref_id[0],
         'chr' :   args.chromosomes  }
@@ -64,6 +66,8 @@ def main():
     parser = argparse.ArgumentParser()
 
     # path arguments
+    parser.add_argument('--sample_files', '-l', help = '[REQUIRED] list of samples to analyze, fastq files.',
+                        default = False,  type=str, nargs='+', required = False)
     parser.add_argument('--sample_dir', '-d', help = '[REQUIRED] directory of samples to analyze, fastq file paths.',
                         default = "/", type = os.path.abspath, required = False)
     parser.add_argument('--reference_genome', '-r', help = '[REQUIRED] Reference genome of the studied organism',
@@ -91,10 +95,10 @@ def main():
     args = parser.parse_args()
 
        # checks
-    if args.sample_dir == "/":
-        print("ERROR: the following argument is required: -d/--sample_dir")
-        sys.exit(1)
-    elif not os.path.exists(args.sample_dir):
+#    if args.sample_dir == "/":
+#        print("ERROR: the following argument is required: -d/--sample_dir")
+#        sys.exit(1)
+    if not os.path.exists(args.sample_dir):
         print(f"ERROR: path to sample list {args.sample_dir} does not exist")
         sys.exit(1)
 

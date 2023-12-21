@@ -2,15 +2,27 @@ configfile: "config.yaml"
 import glob
 import subprocess
 import pandas as pd
-files = glob.glob(config['zip_fastq'])
-zip = []
-gunzip = []
-for w in files:
-    out = w.rsplit('/', 1)
-    zip_out = out[1].rsplit('.', 1)
-    zip.append(out[1])
-    gunzip.append(zip_out[0])
-print(gunzip)
+if glob.glob(config['zip_fastq']) == True:
+	files = glob.glob(config['zip_fastq'])
+	zip = []
+	gunzip = []
+	for w in files:
+    		out = w.rsplit('/', 1)
+    		zip_out = out[1].rsplit('.', 1)
+    		zip.append(out[1])
+    		gunzip.append(zip_out[0])
+	print(gunzip)
+else:
+	files = config['list_files']
+	zip = []
+	gunzip = []
+	for w in files:
+	        print(w)
+    		out = w.rsplit('/', 1)
+    		zip_out = out[1].rsplit('.', 1)
+    		zip.append(out[1])
+    		gunzip.append(zip_out[0])
+	print(gunzip)
 
 rule all:
     input:
