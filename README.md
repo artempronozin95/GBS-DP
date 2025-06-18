@@ -36,7 +36,7 @@ The pipeline is implemented using the workflow management system [Snakemake](htt
 ### Automatic
 **recommended for clusters/servers**
 
-Install only **programs.yaml** environment. Other environments will install automatically when ICAnnoLncRNA start work.
+Install only **programs.yaml** environment. Other environments will install automatically when GBS-DP start work.
 ```
 1. wget https://github.com/artempronozin95/GBS-DP-bioinformatics-pipeline-for-genotyping-by-sequencing-data-processing.git
 2. unzip main.zip
