@@ -1,0 +1,13 @@
+name: filter
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - multiqc=1.17
+  - fastp=0.24.0
+  - fastqc=0.12.1
+  - pip:
+    - scipy
+    - pandas
