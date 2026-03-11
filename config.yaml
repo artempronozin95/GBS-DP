@@ -1,0 +1,28 @@
+type : 'single' # or paried
+fastp :
+    option : "on"
+    strictness_factor : "medium"
+    metrics :
+          --qualified_quality_phred : 20
+          --unqualified_percent_limit : 30
+          --n_base_limit : 0
+          --dedup : 0
+          --trim_front1 : 0
+          --trim_tail1 : 0
+          --overrepresentation_analysis : "--overrepresentation_analysis"
+          --overrepresentation_sampling : 20
+
+zip_fastq : "/datasets/pronozinau-GBS/GBS/*.fq.gz"
+folder : "/datasets/pronozinau-GBS/GBS"
+reference_genome : "ref/GCA_016648075.1_Msac_v2_genomic.fna"
+
+VCF_filter :
+    MQ : 20
+    QUAL : 30
+    DP : 3
+    MAF : 0.05
+    Missing_data : 0.25
+    mind : 0.2
+    act : "off"
+    LD : 0.3
+
