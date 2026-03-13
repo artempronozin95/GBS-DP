@@ -61,11 +61,48 @@ Raw sequences obtened after sequencing methods in FASTQ.gz format.
 Reference genome of the species in `FASTA` format.
 
 ## Configuration file
++ `type :` - Specifies the sequencing data type: "single" for single‑end reads or "paired" for paired‑end reads. This affects how the pipeline processes the raw FASTQ files.
+  + (Example: `type: 'single'`)
++ `fastp :` - Configuration block for the fastp tool, which performs quality control, adapter trimming, and filtering of raw reads.
+   + `option :` - Enables or disables the fastp automatic step. "on" means fastp will be run with automatic settings; "off" skips it and use your own value.
+     + (Example: `option: "on"`)
+    + `strictness_factor :`  -A qualitative setting that determines the stringency of quality filtering. The user selects from "low", "medium", or "high". This value adjusts internal thresholds used by fastp (such as average quality requirements or read retention rates) when more specific parameters are not explicitly defined in the metrics section. A "high" setting applies more aggressive filtering, while "low" is more permissive.
+     +  (Example: `option: "medium"`)
+  + `metrics :` - A list of command‑line arguments passed directly to fastp to fine‑tune its behavior. Manual parameters.
+          `--qualified_quality_phred : 20`
+          `--unqualified_percent_limit : 30`
+          `--n_base_limit : 0`
+          `--dedup : 0`
+          `--trim_front1 : 0`
+          `--trim_tail1 : 0`
+          `--overrepresentation_analysis : "--overrepresentation_analysis"`
+          `--overrepresentation_sampling : 20`
+
+
 Input all necessary files into configuration file “config.yaml”:
 + `zip_fastq:` - the path to the folder with the raw readings.
   + (Example: `zip_fastq: "zip/*.fastq.gz"`)
+folder : "/datasets/pronozinau-GBS/GBS"
 + `reference_genome:` - the path to the reference genome and the name of genome.
   + (Example: `"ref/Prunus_persica_chr_numb"`)
+
++ `VCF_filter :` - Parameters for filtering SNPs and indels from a raw VCF file (typically after variant calling). Common filters applied with tools like bcftools or vcftools.
+  + `MQ :` - Minimum mapping quality (Phred‑scaled). Variants with mapping quality below this threshold are filtered out.
+    + (Example: `MQ : 20`)
+  + `QUAL :` - Minimum variant call quality (Phred‑scaled). Lower‑quality variants are discarded.
+    + (Example: `QUAL : 30`)
+  + `DP :` - Minimum depth of coverage (number of reads) required to retain a variant site.
+    + (Example: `DP : 3`)
+  + `MAF :` - Minor allele frequency threshold. Variants with MAF below this value are considered rare and may be removed.
+    + (Example: `MAF : 0.05`) 
+  + `Missing_data :` - Maximum allowed proportion of missing genotype data per variant (e.g., 0.25 = 25%). Variants with more missing data are filtered out.
+    + (Example: `Missing_data : 0.25`) 
+  + `mind :` - Maximum allowed missing genotype rate per sample (e.g., 0.2 = 20%). Samples exceeding this missingness are removed.
+    + (Example: `Missing_data : 0.2`) 
+  + `act :`  - disable or enable LD parameter.
+    + (Example: `act : "off"`)
+  + `LD :` - Linkage disequilibrium threshold for pruning SNPs. Variants with pairwise LD above this value (e.g., 0.3) may be thinned to reduce redundancy.
+    + (Example: `LD : 0.3`)
     
 ## Work start
   #### 1. `snakemake -j 2`
