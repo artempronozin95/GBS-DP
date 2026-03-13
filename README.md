@@ -175,7 +175,12 @@ A typical structure of `Output` is follows:
 + alignment - reads mapping in `SAM`, `BAM` format. As well sorting mapping reads `SORT` format.
 + VCF - polymorphism searching, `VCF` format.
 + VCF_index -  index of polymorphism files in `CSI` format.
-  
+
+**Statistics plots**
++ Missing data
++ ![Test Image 4](https://github.com/artempronozin95/GBS-DP/blob/main/img/bisnp_vmiss.png)
+A histogram showing the distribution of the missing data rate across SNPs. The X-axis shows the missing data proportion, and the Y-axis shows the count of SNPs with that rate.
+
 ***Genetic diversity analysis***
 + chr - polymorphism file for each chromosome in `VCF` format. As well index of polymorphism files in `CSI` format, for each chromosome. 
 + tree - merged polymorphism files in `VCF` files.
