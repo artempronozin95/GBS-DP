@@ -176,7 +176,7 @@ A typical structure of `Output` is follows:
 + VCF - polymorphism searching, `VCF` format.
 + VCF_index -  index of polymorphism files in `CSI` format.
 
-**Statistics plots**
+***Statistics plots***
 + Missing data
   
 ![Test Image 4](https://github.com/artempronozin95/GBS-DP/blob/main/img/bisnp_vmiss.png)
