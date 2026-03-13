@@ -178,9 +178,12 @@ A typical structure of `Output` is follows:
 
 **Statistics plots**
 + Missing data
+  
 ![Test Image 4](https://github.com/artempronozin95/GBS-DP/blob/main/img/bisnp_vmiss.png)
 `A histogram showing the distribution of the missing data rate across SNPs. The X-axis shows the missing data proportion, and the Y-axis shows the count of SNPs with that rate.`
+
 + MAF
+
 ![Test Image 5](https://github.com/artempronozin95/GBS-DP/blob/main/img/bisnp_maf.png)
 `A histogram showing the distribution of the Minor Allele Frequency (MAF) across SNPs. The X-axis shows the MAF value, and the Y-axis shows the count of SNPs with that value.`
 
